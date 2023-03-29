@@ -1,4 +1,4 @@
-package AplicationP;
+package aplicationP;
 
 import javax.swing.JOptionPane;
 
@@ -13,7 +13,7 @@ public class Principal {
 		boolean continua = true;
 		while (continua) {
 			
-			String opciones = (String) (JOptionPane.showInputDialog(null, "Seleccione una opcion", "Menu", JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Conversor de Moneda", "Conversor de Temperatura"}, "Opcion"));
+			String opciones = (String) (JOptionPane.showInputDialog(null, "Seleccione una opcion", "Menu", JOptionPane.QUESTION_MESSAGE, null, new Object[] {"Conversor de Moneda", "Conversor de Temperatura", "Conversor de Longitud"}, "Opcion"));
 			if (opciones == null) {
 				JOptionPane.showMessageDialog(null, "Programa Terminado");
 				System.exit(0);
@@ -71,6 +71,30 @@ public class Principal {
 				break;
 				
 			}
+			
+			case "Conversor de Longitud":{
+				String input = JOptionPane.showInputDialog("Ingrese la cantidad a convertir");
+				if (valor.valorExepcion(input)) {
+					double input2 = Double.parseDouble(input);
+					new Longitud(input2);
+					
+					int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea realizar otra conversión?");
+					if (JOptionPane.OK_OPTION == respuesta) {
+						System.out.println("Continúa");
+					}else {
+						continua = false;
+						JOptionPane.showMessageDialog(null, "Programa terminado");
+					}
+					
+					
+					
+					
+				}
+				
+				break;
+			}
+			
+			
 			
 			default:
 				throw new IllegalArgumentException("Unexpected value: " + opciones);
