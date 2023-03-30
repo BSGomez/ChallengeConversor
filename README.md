@@ -1,4 +1,4 @@
-# <h1 align="center">ChallengeConversor</h1>
+# <h1 align="center">Challenge Conversor</h1>
 Proyecto de conversor de monedas realizado en el curso de back-end impartido por Alura latam y Oracle.
 
 ## <h2 aling="center">Índice del Contenido</h2>
